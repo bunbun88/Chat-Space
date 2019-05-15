@@ -35,8 +35,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, foreign_key: true|
-|message|string|null: false, foreign_key: true|
-|image|string|null: false, foreign_key: true|
+|message|string|
+|image|string|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
