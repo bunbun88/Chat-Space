@@ -1,24 +1,23 @@
 # README
 
-## userテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 
 ### Association
-- has_many :group, through: :members
-- has_many :message
+- has_many :groups, through: :members
+- has_many :messages
 - has_many :members
 
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|name|string|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
-- has_many :user, through: :members
-- has_many :message
+- has_many :users, through: :members
+- has_many :messages
 - has_many :members
 
 ## membersテーブル
@@ -34,8 +33,7 @@
 ## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|message|string|
+|content|string|
 |image|string|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
