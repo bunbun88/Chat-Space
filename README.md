@@ -1,6 +1,6 @@
 # README
 
-## uesrテーブル
+## userテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, foreign_key: true|
@@ -8,7 +8,7 @@
 |email|string|null: false, foreign_key: true|
 
 ### Association
-- has_many :members
+- has_many :group, through: :members
 - has_many :message
 
 ## groupテーブル
@@ -18,7 +18,7 @@
 |groupname|string|null: false, foreign_key: true|
 
 ### Association
-- has_many :members
+- has_many :user, through: :members
 - has_many :message
 
 ## membersテーブル
