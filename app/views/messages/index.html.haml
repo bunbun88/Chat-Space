@@ -1,0 +1,32 @@
+.side
+  .side-header
+    .side-header__box
+      %p.side-header__box__user-name bun
+      %ul.side-header__box__menu
+        %li.side-header__box__menu__new-group
+          = link_to("URL") do
+            %i.fa.fa-edit.cl
+        %li.side-header__box__menu__edit-user
+          = link_to("URL") do
+            %i.fa.fa-cog.cl
+  = render partial: "groups"
+.main
+  .main-header
+    .main-header__left-box
+      %h2.main-header__left-box__current-group
+        sample
+      %ul.main-header__left-box__member-list
+        Member：
+        %li.main-header__left-box__member-list__member shun
+        %li.main-header__left-box__member-list__member bun
+    = link_to("URL") do
+      .main-header__edit-btn Edit
+  = render partial: "messages"
+  .form
+    %form.new_message{"accept-charset" => "UTF-8", action: "URL", enctype: "multipart/form-data", method: "post"}
+      .input-box
+        %input.input-box__text{name: "messagecontent", placeholder: "type a message", type: "text"}/
+        %label.input-box__image{for: "message_image"}
+          %i.fa.fa-image
+          %input.input-box__image__file{id: "message_image", type: "file"}/
+      %input.submit-btn{"data-disable-with" => "Send", name: "commit", type: "submit", value: "Send"}/

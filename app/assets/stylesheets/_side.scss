@@ -1,0 +1,44 @@
+*{
+  box-sizing: border-box;
+}
+
+$backcolor: #253141;
+$messagecolor:#434a54;
+
+.side {
+  width: 300px;
+  background-color: $backcolor;
+  color: white;
+  float: left;
+
+  &-header{
+    background-color: $backcolor;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+ 
+    &__box{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-weight: bold;
+    
+      &__menu{
+        font: normal 15px FontAwesome;
+        display: flex;
+
+        .cl{
+          color: white;
+          margin-left: 0.3rem;
+        }
+      }
+    }
+  }
+  .groups {
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    padding: 20px 20px 0;
+    overflow: scroll;
+  }
+}
