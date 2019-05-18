@@ -23,10 +23,10 @@
       .main-header__edit-btn Edit
   = render partial: "messages"
   .form
-    %form.new_message{"accept-charset" => "UTF-8", action: "URL", enctype: "multipart/form-data", method: "post"}
+    %form.new_message{"accept-charset":"UTF-8", action: "URL", enctype: "multipart/form-data", method: "post"}
       .input-box
         %input.input-box__text{name: "messagecontent", placeholder: "type a message", type: "text"}/
         %label.input-box__image{for: "message_image"}
           %i.fa.fa-image
           %input.input-box__image__file{id: "message_image", type: "file"}/
-      %input.submit-btn{"data-disable-with" => "Send", name: "commit", type: "submit", value: "Send"}/
+      %input.submit-btn{"data-disable-with":"Send", name: "commit", type: "submit", value: "Send"}/
