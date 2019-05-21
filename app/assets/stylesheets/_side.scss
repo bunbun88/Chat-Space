@@ -40,5 +40,18 @@ $messagecolor:#434a54;
     background-color: #2f3e51;
     padding: 20px 20px 0;
     overflow: scroll;
+    .group {
+      box-sizing: border-box;
+      padding: 20px 0 40px;
+      &__group-name {
+        color: white;
+        text-decoration: none;
+      }
+      &__latest-message {
+        color: white;
+        text-decoration: none;
+        font-size: 10px;
+      }
+    }
   }
 }
