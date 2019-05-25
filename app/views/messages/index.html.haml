@@ -1,17 +1,5 @@
 .side
   = render partial: "devise/shared/side_bar"
-  -# .side-header
-  -#   .side-header__box
-  -#     %p.side-header__box__user-name
-  -#       = current_user.name
-  -#     %ul.side-header__box__menu
-  -#       %li.side-header__box__menu__new-group
-  -#         = link_to new_group_path do
-  -#           %i.fa.fa-edit.cl
-  -#       %li.side-header__box__menu__edit-user
-  -#         = link_to("/users/edit") do
-  -#           %i.fa.fa-cog.cl
-  -# = render partial: "groups"
 .main
   .main-header
     .main-header__left-box
@@ -21,26 +9,16 @@
         %li Member
         %li.main-header__left-box__member-list__member
           - @group.users.each do |user|
-            = user.name
-        -# %li.main-header__left-box__member-list__member 
+            = user.name 
     = link_to("edit") do
       .main-header__edit-btn Edit
   .messages
     = render partial: 'messages', collection: @messages
   .form
-    = form_for [@group, @message] do |f|
+    = form_for [@group, @message], html: {id: :new_message} do |f| 
       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
       .form__mask
         = f.label :image, class: 'form__mask__image' do
           = fa_icon 'picture-o', class: 'icon'
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'form__submit'
-
-  -# .form
-  -#   %form.new_message{"accept-charset":"UTF-8", action: "URL", enctype: "multipart/form-data", method: "post"}
-  -#     .input-box
-  -#       %input.input-box__text{name: "messagecontent", placeholder: "type a message", type: "text"}/
-  -#       %label.input-box__image{for: "message_image"}
-  -#         %i.fa.fa-image
-  -#         %input.input-box__image__file{id: "message_image", type: "file"}/
-  -#     %input.submit-btn{"data-disable-with":"Send", name: "commit", type: "submit", value: "Send"}/
